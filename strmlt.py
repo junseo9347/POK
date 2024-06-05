@@ -1,7 +1,7 @@
 import streamlit as st
 import csv
 import random
-from konlpy.tag import Mecab
+from konlpy.tag import Kkma
 import matplotlib.pyplot as plt
 from matplotlib import rc
 
@@ -12,11 +12,11 @@ def speech():
             yield sentence + "."
 
 
-m = Mecab("/usr/local/lib64/mecab/dic/mecab-ko-dic")
+k = Kkma("/usr/local/lib64/mecab/dic/mecab-ko-dic")
 sequences = {}
 morphs = {}
 for sentence in speech():
-    l = m.morphs(sentence)
+    l = k.morphs(sentence)
     for morph in l:
         morphs[morph] = morphs.get(morph, 0) + 1
     for i in range(len(l)-1):
