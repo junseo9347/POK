@@ -12,7 +12,7 @@ def speech():
             yield sentence + "."
 
 
-k = Kkma("/usr/local/lib64/mecab/dic/mecab-ko-dic")
+k = Kkma()
 sequences = {}
 morphs = {}
 for sentence in speech():
